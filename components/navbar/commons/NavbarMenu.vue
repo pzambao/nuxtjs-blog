@@ -23,7 +23,7 @@
         <NuxtLink to="/" @click="handleClose">
           Início
         </NuxtLink>
-        <NuxtLink to="/search-cep" @click="handleClose">
+        <NuxtLink to="/search-cep/" @click="handleClose">
           Buscar CEP
         </NuxtLink>
       </nav>
