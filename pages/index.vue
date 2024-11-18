@@ -25,7 +25,7 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss" scoped>
+<style>
 html, body{
   background-color: #111827;
 }
