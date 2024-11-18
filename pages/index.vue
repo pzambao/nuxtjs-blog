@@ -24,3 +24,9 @@ export default Vue.extend({
   name: 'StorePage'
 })
 </script>
+
+<style lang="scss" scoped>
+html, body{
+  background-color: #111827;
+}
+</style>
