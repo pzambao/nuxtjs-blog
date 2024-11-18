@@ -8,6 +8,7 @@
           v-model="form.cep"
           class="w-full bg-transparent border-b border-white focus:outline-none focus:border-white text-white"
           type="text"
+          placeholder="Ex.: 01035100"
           @input="checkCep"
         />
         <span v-if="errors.cep">CEP é obrigatório e deve ter 8 caracteres</span>
@@ -19,6 +20,7 @@
           v-model="form.uf"
           type="text"
           class="w-full bg-transparent border-b border-white focus:outline-none focus:border-white text-white"
+          placeholder="Ex.: SP"
         />
         <span v-if="errors.uf">Estado é obrigatório</span>
       </div>
@@ -29,6 +31,7 @@
           v-model="form.localidade"
           type="text"
           class="w-full bg-transparent border-b border-white focus:outline-none focus:border-white text-white"
+          placeholder="Ex.: São Paulo"
         />
         <span v-if="errors.localidade">Cidade é obrigatória</span>
       </div>
@@ -39,6 +42,7 @@
           v-model="form.bairro"
           type="text"
           class="w-full bg-transparent border-b border-white focus:outline-none focus:border-white text-white"
+          placeholder="Ex.: República"
         />
         <span v-if="errors.bairro">Bairro é obrigatório</span>
       </div>
@@ -49,6 +53,7 @@
           v-model="form.logradouro"
           type="text"
           class="w-full bg-transparent border-b border-white focus:outline-none focus:border-white text-white"
+          placeholder="Ex.: Av. São João"
         />
         <span v-if="errors.logradouro">Rua é obrigatória</span>
       </div>
@@ -59,6 +64,7 @@
           v-model="form.number"
           type="text"
           class="w-full bg-transparent border-b border-white focus:outline-none focus:border-white text-white"
+          placeholder="Ex.: 16"
         />
         <span v-if="errors.number">Número é obrigatório</span>
       </div>
@@ -69,6 +75,7 @@
           v-model="form.complement"
           type="text"
           class="w-full bg-transparent border-b border-white focus:outline-none focus:border-white text-white"
+          placeholder="Ex.: Apto. 116"
         />
       </div>
 
@@ -130,7 +137,10 @@ const fetchCepData = async (cep: string) => {
   }
 }
 
+
 const checkCep = () => {
+  form.value.cep = form.value.cep.replace(/\D/g, '').slice(0, 8)
+
   if (form.value.cep.length === 8) {
     fetchCepData(form.value.cep)
   }
