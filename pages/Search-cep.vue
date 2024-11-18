@@ -1,7 +1,7 @@
 <template>
-  <div class="items-center justify-center bg-gray-900 w-full pb-8">
+  <div class="items-center justify-center bg-gray-900 h-screen w-full pb-8">
     <Navbar />
-    <form class="grid grid-cols-1 gap-8 w-[70%] sm:w-[30%] h-screen py-8 justify-self-center text-white " @submit.prevent="handleSubmit">
+    <form class="grid grid-cols-1 gap-4 w-[70%] sm:w-[30%] pt-4 justify-self-center text-white " @submit.prevent="handleSubmit">
       <div>
         <label for="cep" class="block text-sm font-medium text-left mb-1">CEP</label>
         <input
