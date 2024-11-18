@@ -5,6 +5,9 @@
       "use": "@vercel/node"
     }
   ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/.output/server/index.mjs" }
+  ],
   "outputDirectory": ".output",
   "framework": "nuxtjs"
 }
