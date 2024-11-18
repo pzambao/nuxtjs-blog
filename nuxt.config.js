@@ -5,7 +5,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxt-js-search-cep',
+    title: 'Buscar CEP | NuxtJS Form',
     htmlAttrs: {
       lang: 'en'
     },
