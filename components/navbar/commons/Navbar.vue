@@ -15,7 +15,7 @@
       <NuxtLink to="/">
         Início
       </NuxtLink>
-      <NuxtLink to="/search-cep">
+      <NuxtLink to="/search-cep/">
         BuscarCEP
       </NuxtLink>
     </nav>
