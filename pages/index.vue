@@ -8,6 +8,9 @@
       <p class="text-center">
         Formulário para busca de endereço através do cep utilizando <b>NuxtJS</b>, <b>Typescript</b> e <b>TailwindCSS</b>
       </p>
+      <NuxtLink to="/search-cep/" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold mt-8 py-1 px-4 rounded inline-flex items-center">
+        <span>Acessar Formulário</span>
+      </NuxtLink>
     </div>
     <Footer />
   </div>

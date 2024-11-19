@@ -1,7 +1,16 @@
 <template>
   <div class="items-center justify-center bg-gray-900 h-screen w-full pb-8">
     <Navbar />
-    <form class="grid grid-cols-1 gap-4 w-[70%] sm:w-[30%] pt-4 justify-self-center text-white " @submit.prevent="handleSubmit">
+    <Breadcrumb :items="breadcrumbItems" />
+    <div class="grid grid-cols-1 w-[70%] sm:w-[30%] pb-2 justify-self-center text-white">
+      <h1 class="mb-4 text-xl text-center">
+        <b>Buscar endereço</b>
+      </h1>
+      <p class="text-center">
+        Preencha o CEP da localidade para realizar a busca na API <b>ViaCEP</b>
+      </p>
+    </div>
+    <form class="grid grid-cols-1 gap-6 w-[70%] sm:w-[30%] pt-4 pb-16 justify-self-center text-white " @submit.prevent="handleSubmit">
       <div>
         <label for="cep" class="block text-sm font-medium text-left mb-1">CEP</label>
         <input
@@ -80,7 +89,7 @@
       </div>
 
       <div class="text-right">
-        <button type="submit" class="bg-white text-black p-1 border-b rounded-sm ">
+        <button type="submit" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-1 px-2 rounded inline-flex items-center">
           Enviar
         </button>
       </div>
@@ -93,6 +102,12 @@
 import { ref } from 'vue'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import Breadcrumb from '@/components/breadcrumb/breadcrumb.vue'
+
+const breadcrumbItems = [
+  { label: 'Home', to: '/' },
+  { label: 'Buscar CEP', to: '/buscar-cep', isCurrent: true }
+]
 
 interface CepValues {
   cep: string;
@@ -136,7 +151,6 @@ const fetchCepData = async (cep: string) => {
     console.error('Erro ao buscar o CEP:', error)
   }
 }
-
 
 const checkCep = () => {
   form.value.cep = form.value.cep.replace(/\D/g, '').slice(0, 8)

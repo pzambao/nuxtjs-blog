@@ -2,7 +2,7 @@
   <div
     :class="[
       isVisible ? 'flex' : 'invisible',
-      'fixed inset-0 w-full h-full bg-black bg-opacity-40 backdrop-blur-sm md:hidden text-white px-8'
+      'fixed inset-0 w-full h-full bg-black bg-opacity-40 backdrop-blur-sm md:hidden text-white'
     ]"
   >
     <div class="w-full h-full bg-h-blue-900 shadow-md py-4 px-5">
